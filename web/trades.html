@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trades — Regime Monitor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <span class="live-dot" id="liveDot"></span>
+      <h1>REGIME MONITOR</h1>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Signals</a>
+        <a href="trades.html" class="nav-link active">Trades</a>
+      </nav>
+    </div>
+    <div class="topbar-right">
+      <span id="lastUpdate">connecting…</span>
+    </div>
+  </header>
+
+  <main class="trades-main">
+    <div class="tier-compare">
+      <div class="tier-card">
+        <div class="tier-label">@ $100 capital</div>
+        <div class="tier-pnl" id="pnl100">—</div>
+        <div class="tier-sub" id="sub100">no resolved trades yet</div>
+      </div>
+      <div class="tier-vs">vs</div>
+      <div class="tier-card">
+        <div class="tier-label">@ $1000 capital</div>
+        <div class="tier-pnl" id="pnl1000">—</div>
+        <div class="tier-sub" id="sub1000">no resolved trades yet</div>
+      </div>
+    </div>
+    <p class="tier-note">
+      Same % risk math at both tiers when capped — the real difference is
+      $100 usually forces one position at a time (each trade wants ~100%
+      of capital), while $1000 lets you hold several signals in parallel.
+    </p>
+
+    <div class="log-header">
+      <h2>ALL LOGGED SIGNALS</h2>
+      <span id="logSummary" class="log-summary">loading…</span>
+    </div>
+    <table class="log-table">
+      <thead>
+        <tr>
+          <th>Time</th><th>Symbol</th><th>Signal</th><th>Strategy</th><th>Conf</th>
+          <th>Entry</th><th>Stop</th><th>Target</th><th>Status</th><th>R</th>
+          <th>$100 P/L</th><th>$1000 P/L</th>
+        </tr>
+      </thead>
+      <tbody id="logBody"></tbody>
+    </table>
+  </main>
+
+  <footer class="footer">read-only · no execution · 15m · updates every 60s</footer>
+
+<script src="trades.js"></script>
+</body>
+</html>

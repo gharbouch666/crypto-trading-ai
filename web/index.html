@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regime Monitor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <span class="live-dot" id="liveDot"></span>
+      <h1>REGIME MONITOR</h1>
+      <nav class="nav">
+        <a href="index.html" class="nav-link active">Signals</a>
+        <a href="trades.html" class="nav-link">Trades</a>
+      </nav>
+    </div>
+    <div class="topbar-right">
+      <span id="lastUpdate">connecting…</span>
+    </div>
+  </header>
+
+  <main id="grid" class="grid"></main>
+
+  <footer class="footer">read-only · no execution · 15m · updates every 60s</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

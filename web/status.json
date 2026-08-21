@@ -1,0 +1,158 @@
+{
+  "symbols": [
+    {
+      "symbol": "BTC/USDT",
+      "price": 73716.0,
+      "regime": "VOLUME_EXPANSION",
+      "candle_time": "2026-08-21T00:15:00+00:00",
+      "updated_at": "2026-08-21T00:36:46.810450+00:00",
+      "strategy": "TREND",
+      "rr": 3.0,
+      "atr_mult": 1.0,
+      "train_pf": 1.831,
+      "train_expectancy": 0.5164,
+      "train_trades": 493,
+      "confidence": "HIGH",
+      "confidence_reason": "strong train PF with solid sample size",
+      "why": "EMA20 above EMA50 and price above EMA20 -- confirmed uptrend.",
+      "signal": "LONG",
+      "entry_ref": 73716.0,
+      "stop": 73451.197857,
+      "target": 74510.406429,
+      "sizing": {
+        "100": {
+          "risk_usd": 0.36,
+          "position_usd": 100.0,
+          "position_pct_capital": 100.0,
+          "capped": true
+        },
+        "1000": {
+          "risk_usd": 3.59,
+          "position_usd": 1000.0,
+          "position_pct_capital": 100.0,
+          "capped": true
+        }
+      }
+    },
+    {
+      "symbol": "ETH/USDT",
+      "price": 2337.62,
+      "regime": "VOLUME_EXPANSION",
+      "candle_time": "2026-08-21T00:15:00+00:00",
+      "updated_at": "2026-08-21T00:36:47.072102+00:00",
+      "strategy": "MOMENTUM",
+      "rr": 3.0,
+      "atr_mult": 1.0,
+      "train_pf": 1.878,
+      "train_expectancy": 0.5401,
+      "train_trades": 514,
+      "confidence": "HIGH",
+      "confidence_reason": "strong train PF with solid sample size",
+      "why": "Price broke above previous candle's high -- breakout.",
+      "signal": "NONE",
+      "reason": "no entry condition met"
+    },
+    {
+      "symbol": "SOL/USDT",
+      "price": 88.41,
+      "regime": "VOLUME_EXPANSION",
+      "candle_time": "2026-08-21T00:15:00+00:00",
+      "updated_at": "2026-08-21T00:36:47.348801+00:00",
+      "strategy": "TREND",
+      "rr": 3.0,
+      "atr_mult": 1.0,
+      "train_pf": 1.99,
+      "train_expectancy": 0.5957,
+      "train_trades": 451,
+      "confidence": "LOW",
+      "confidence_reason": "weak separation from random entries in validation testing",
+      "why": "EMA20 above EMA50 and price above EMA20 -- confirmed uptrend.",
+      "signal": "LONG",
+      "entry_ref": 88.41,
+      "stop": 88.055714,
+      "target": 89.472857,
+      "sizing": {
+        "100": {
+          "risk_usd": 0.4,
+          "position_usd": 100.0,
+          "position_pct_capital": 100.0,
+          "capped": true
+        },
+        "1000": {
+          "risk_usd": 4.01,
+          "position_usd": 1000.0,
+          "position_pct_capital": 100.0,
+          "capped": true
+        }
+      }
+    },
+    {
+      "symbol": "XRP/USDT",
+      "price": 1.2671,
+      "regime": "TREND_LOW_VOL",
+      "candle_time": "2026-08-21T00:15:00+00:00",
+      "updated_at": "2026-08-21T00:36:47.611171+00:00",
+      "strategy": "TREND",
+      "rr": 2.5,
+      "atr_mult": 1.5,
+      "train_pf": 1.838,
+      "train_expectancy": 0.4829,
+      "train_trades": 184,
+      "confidence": "HIGH",
+      "confidence_reason": "strong train PF with solid sample size",
+      "why": "EMA20 above EMA50 and price above EMA20 -- confirmed uptrend.",
+      "signal": "LONG",
+      "entry_ref": 1.2671,
+      "stop": 1.251329,
+      "target": 1.306529,
+      "sizing": {
+        "100": {
+          "risk_usd": 1.0,
+          "position_usd": 80.34,
+          "position_pct_capital": 80.3,
+          "capped": false
+        },
+        "1000": {
+          "risk_usd": 10.0,
+          "position_usd": 803.41,
+          "position_pct_capital": 80.3,
+          "capped": false
+        }
+      }
+    },
+    {
+      "symbol": "BNB/USDT",
+      "price": 655.5,
+      "regime": "VOLUME_EXPANSION",
+      "candle_time": "2026-08-21T00:15:00+00:00",
+      "updated_at": "2026-08-21T00:36:47.906821+00:00",
+      "strategy": "TREND",
+      "rr": 3.0,
+      "atr_mult": 1.0,
+      "train_pf": 1.946,
+      "train_expectancy": 0.5741,
+      "train_trades": 447,
+      "confidence": "HIGH",
+      "confidence_reason": "strong train PF with solid sample size",
+      "why": "EMA20 above EMA50 and price above EMA20 -- confirmed uptrend.",
+      "signal": "LONG",
+      "entry_ref": 655.5,
+      "stop": 653.492857,
+      "target": 661.521429,
+      "sizing": {
+        "100": {
+          "risk_usd": 0.31,
+          "position_usd": 100.0,
+          "position_pct_capital": 100.0,
+          "capped": true
+        },
+        "1000": {
+          "risk_usd": 3.06,
+          "position_usd": 1000.0,
+          "position_pct_capital": 100.0,
+          "capped": true
+        }
+      }
+    }
+  ]
+}

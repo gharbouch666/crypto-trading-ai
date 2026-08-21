@@ -1,0 +1,138 @@
+﻿:root {
+  --bg: #0B0E14;
+  --panel: #12161F;
+  --border: #232935;
+  --text: #E6E9F0;
+  --text-dim: #7A8296;
+  --text-faint: #4A5568;
+  --long: #3FB68B;
+  --short: #E2574C;
+  --amber: #D4A24E;
+
+  --font-display: 'IBM Plex Sans Condensed', sans-serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  padding: 0 0 40px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 28px;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.topbar-left { display: flex; align-items: center; gap: 16px; }
+.topbar h1 { font-family: var(--font-display); font-weight: 700; font-size: 16px; letter-spacing: 0.06em; }
+
+.nav { display: flex; gap: 4px; }
+.nav-link {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-dim);
+  text-decoration: none;
+  padding: 5px 12px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+}
+.nav-link:hover { color: var(--text); }
+.nav-link.active { color: var(--text); border-color: var(--border); background: var(--panel); }
+
+.live-dot {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--long);
+  box-shadow: 0 0 0 0 rgba(63, 182, 139, 0.6);
+  animation: pulse 2s infinite;
+}
+.live-dot.stale { background: var(--amber); animation: none; }
+.live-dot.dead { background: var(--short); animation: none; }
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(63, 182, 139, 0.55); }
+  70% { box-shadow: 0 0 0 8px rgba(63, 182, 139, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(63, 182, 139, 0); }
+}
+
+#lastUpdate { font-family: var(--font-mono); font-size: 12px; color: var(--text-dim); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+  padding: 20px 28px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.card-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+.symbol { font-family: var(--font-display); font-weight: 600; font-size: 15px; }
+.price { font-family: var(--font-mono); font-size: 14px; }
+
+.regime-strip { display: flex; gap: 3px; margin-bottom: 10px; cursor: help; }
+.regime-seg { flex: 1; height: 4px; border-radius: 2px; background: #1D2330; }
+.regime-seg.active { background: var(--amber); animation: glow 2.4s ease-in-out infinite; }
+@keyframes glow { 0%, 100% { opacity: 0.65; } 50% { opacity: 1; } }
+
+.signal-row { display: flex; align-items: center; gap: 6px; padding: 8px 0; border-top: 1px solid var(--border); margin-bottom: 8px; flex-wrap: wrap; }
+.signal-badge { font-family: var(--font-display); font-weight: 700; font-size: 12px; letter-spacing: 0.06em; padding: 3px 8px; border-radius: 4px; }
+.signal-badge.LONG { background: rgba(63, 182, 139, 0.15); color: var(--long); }
+.signal-badge.SHORT { background: rgba(226, 87, 76, 0.15); color: var(--short); }
+.signal-badge.NONE { background: rgba(74, 85, 104, 0.2); color: var(--text-dim); }
+
+.strategy-tag { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); cursor: help; border-bottom: 1px dotted var(--text-faint); }
+.conf-badge { margin-left: auto; font-family: var(--font-mono); font-size: 9px; padding: 2px 6px; border: 1px solid; border-radius: 3px; letter-spacing: 0.04em; cursor: help; }
+
+.levels { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; font-family: var(--font-mono); font-size: 12px; }
+.levels .level-label { color: var(--text-faint); font-size: 9px; text-transform: uppercase; margin-bottom: 2px; }
+.levels .stop-val { color: var(--short); }
+.levels .target-val { color: var(--long); }
+
+.tier-mini-wrap { margin-top: 10px; padding-top: 8px; border-top: 1px dashed var(--border); }
+.tier-mini { display: flex; gap: 8px; align-items: center; font-family: var(--font-mono); font-size: 10.5px; color: var(--text-dim); padding: 2px 0; }
+.tier-mini-label { color: var(--amber); font-weight: 600; width: 42px; }
+.tier-mini-risk { color: var(--text-faint); margin-left: auto; }
+
+.no-signal-note { font-family: var(--font-mono); font-size: 11.5px; color: var(--text-faint); }
+
+.meta-row { display: flex; justify-content: space-between; margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--border); font-family: var(--font-mono); font-size: 10px; color: var(--text-faint); }
+
+.footer { text-align: center; font-family: var(--font-mono); font-size: 11px; color: var(--text-faint); padding: 20px; }
+.error-card { color: var(--short); font-family: var(--font-mono); font-size: 12px; }
+
+/* ---- Trades page ---- */
+.trades-main { padding: 24px 28px; }
+
+.tier-compare { display: flex; align-items: center; gap: 20px; margin-bottom: 8px; }
+.tier-card { flex: 1; background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; }
+.tier-label { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+.tier-pnl { font-family: var(--font-display); font-size: 32px; font-weight: 700; }
+.tier-sub { font-family: var(--font-mono); font-size: 11px; color: var(--text-faint); margin-top: 6px; }
+.tier-vs { font-family: var(--font-mono); color: var(--text-faint); font-size: 12px; }
+
+.tier-note { font-family: var(--font-mono); font-size: 11.5px; color: var(--text-dim); line-height: 1.6; margin: 16px 0 28px; max-width: 700px; }
+
+.log-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
+.log-header h2 { font-family: var(--font-display); font-size: 13px; letter-spacing: 0.08em; color: var(--text-dim); }
+.log-summary { font-family: var(--font-mono); font-size: 12px; color: var(--text-dim); }
+
+.log-table { width: 100%; border-collapse: collapse; font-family: var(--font-mono); font-size: 11.5px; background: var(--panel); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.log-table th { text-align: left; padding: 9px 10px; color: var(--text-faint); font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.04em; border-bottom: 1px solid var(--border); white-space: nowrap; }
+.log-table td { padding: 7px 10px; border-bottom: 1px solid var(--border); color: var(--text-dim); white-space: nowrap; }
+.log-table tr:last-child td { border-bottom: none; }
+.sig-LONG { color: var(--long); }
+.sig-SHORT { color: var(--short); }
